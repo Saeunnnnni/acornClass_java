@@ -1,4 +1,4 @@
-package frame01;
+package frame05;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -80,7 +80,7 @@ public class MyFrame05 extends JFrame implements ActionListener{
 	
 	public static void main(String[] args) {
 		//MyFrame 객체 생성
-		new MyFrame05("나의 프레임!");
+		new MyFrame05("나의 프레임5!");
 		System.out.println("main메소드가 종료 됩니다");
 	}
 
