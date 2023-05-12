@@ -69,37 +69,15 @@ import javax.swing.JTextField;
 					
 			
 			setVisible(true);
-			
 			//이벤트 두개에서 동일하게 사용해야하기 때문에 이벤트의 안쪽이 아닌 바깥쪽에 선언
 			 File f = new File("c:\\acorn202304\\myFolder\\diary.txt");
-			 
-			 //입력한 문자를 메모장에 전달하는 이벤트
-			 submitBtn.addActionListener((e2)->{
-				 //입력한 문자열 읽어오기 
-				 String msg=field.getText(); 
-				 //File 객체 
-				
-				 try {
-					if(!f.exists()) {
-						f.createNewFile();
-					}
-					//파일에 문자열 읽어오기 
-					FileWriter fw = new FileWriter(f, true);
-					fw.write(msg); 
-					fw.write("\r\n");  //개행기호
-					fw.flush();
-					fw.close();
-					JOptionPane.showMessageDialog(this,"저장 했습니다." );
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			 });
 			 
 			 //파일에 저장된 문자열을 읽어오는 이벤트
 			 readBtn.addActionListener((e2)->{
 				 //try블럭 안에서 사용할 변수에 null을 넣어서  미리 만들어 놓는다.
 				 FileReader fr = null;
 				 BufferedReader br =null;
+				 
 				 try{
 					 //참조값은 try 블럭 안에서 new해서 넣어준다. 
 					 fr = new FileReader(f);
@@ -134,6 +112,32 @@ import javax.swing.JTextField;
 				
 			 });
 			 
+			
+			
+			 
+			 //입력한 문자를 메모장에 전달하는 이벤트
+			 submitBtn.addActionListener((e2)->{
+				 //입력한 문자열 읽어오기 
+				 String msg=field.getText(); 
+				 //File 객체 
+				
+				 try {
+					if(!f.exists()) {
+						f.createNewFile();
+					}
+					//파일에 문자열 읽어오기 
+					FileWriter fw = new FileWriter(f, true);
+					fw.write(msg); 
+					fw.write("\r\n");  //개행기호
+					fw.flush();
+					fw.close();
+					JOptionPane.showMessageDialog(this,"저장 했습니다." );
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			 });
+			 
+			
 			
 	
 		}
