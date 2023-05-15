@@ -35,7 +35,7 @@ public class MainClass01 {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
-	      //SElect 작업을 위해서 필요한 객체의 참조값을 담을 지역변수 미리 만들기
+	      //Select 작업을 위해서 필요한 객체의 참조값을 담을 지역변수 미리 만들기
 	      PreparedStatement pstmt=null;
 	      ResultSet rs =null;
 	      
