@@ -30,12 +30,12 @@ public class MemberDao {
 				//Connection 객체의 참조값 얻어오기
 				conn = new DBConnect().getConn();
 				//실행할 sql 문(select 문)
-				String sql = "select name,addr" 
-							+"from member"
-							+"where num=?";
+				String sql = " select name,addr" 
+							+" from member"
+							+" where num=?";
 				pstmt = conn.prepareStatement(sql);
 				//select 문이 미완성이라면 여기서 완성한다.
-
+				pstmt.setInt(1,num);
 				//select 문 수행하고 결과를 ResultSet 으로 리턴받기
 				rs = pstmt.executeQuery();
 				//반복문 돌면서 ResultSet 에 있는 row 에 있는 정보를 추출한다.

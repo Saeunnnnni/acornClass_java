@@ -22,6 +22,6 @@ public class MainClass17 {
 		}else {
 			System.out.println(num + "번 회원은 존재 하지 않습니다.");
 		}
-	}
+	} 
 
 }
